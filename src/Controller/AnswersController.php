@@ -18,6 +18,7 @@ class AnswersController extends AppController
        $this->loadcomponent('flash');
        
   }
+// users view query reply by admin
   public function replyadmin($id_query)
   {
      $this->viewBuilder()->setlayout('answerslayout');
@@ -40,7 +41,7 @@ class AnswersController extends AppController
     //$this->set(compact('querydata'));
     $this->set(compact('qarr'));
   }
- 
+//users asked querry  
   public function upload()
   { 
     //pr($_SESSION); exit;
@@ -78,6 +79,7 @@ class AnswersController extends AppController
       }
       elseif(!empty($this->request->data['photo']['name']))
       {  
+        
         $file = $this->request->data['photo'];
         $ext = substr(strtolower(strrchr($file['name'], '.')), 1);//check typ of file 
         $arr_ext = array('jpg', 'jpeg', 'gif','png');

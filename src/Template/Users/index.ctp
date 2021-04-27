@@ -8,7 +8,7 @@
   
 <div>
 
-<table  border="1" align="center" >
+<table  border="1" align="center" style="height: 100%;width: 60%" >
 
     <tr>
         <th>Sr.N.</th>

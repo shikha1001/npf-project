@@ -12,7 +12,7 @@
     <tr>
     	<td><?=$k ?></td>
         <td>
-        <table  style="height: 50%; width: 70%;">
+        <table  style="height: 50%; width: 90%;">
         <?php foreach ($v as $k1 => $v1) : ?>
     	<tr>
             <td><?php 

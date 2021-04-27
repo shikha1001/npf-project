@@ -6,7 +6,8 @@
      
      if($this->request->session()->read('usr'))
      {
-       return $this->redirect(['controller'=>'Users','action' => 'indexusers']);
+      $id=$this->request->session()->read('usr')['id']
+       return $this->redirect(['controller'=>'Users','action' => 'indexusers',$id]);
      }
      
      if ($this->request->is('post'))
@@ -20,8 +21,9 @@
            $this->Auth->setUser($user);
            $session = $this->request->getSession();
            $session->write('usr',$user);
-           return $this->redirect(['action' => 'index']);
+           
            $this->Flash->success(__('admin'));
+           return $this->redirect($this->Auth->redirectUrl());
        }
        elseif($data)
        {
@@ -29,9 +31,11 @@
           $this->Auth->setUser($user);
           $session = $this->request->getSession();
            $users_session=$session->write('usr',$user);
-          return $this->redirect($this->Auth->redirectUrl());
+          
           //return $this->redirect(['action' => 'indexusers']);
           $this->Flash->success(__('user'));
+          $id= $user['id'];
+          return $this->redirect(['action' => 'index'],$id);
        }
        else
        {

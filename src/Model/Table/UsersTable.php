@@ -2,6 +2,7 @@
 namespace App\Model\Table;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+//use App\Model\Entity\User;
 use Cake\ORM\TableRegistry;
 
 class UsersTable extends Table
@@ -10,20 +11,6 @@ class UsersTable extends Table
     {
         parent::initialize($config);
         $this->table('users');
-        $this->displayfield('id');
-        $this->primarykey('id');
-        $this->addBehavior('Timestamp');
-        $this->hasMany=['Answers'];
-        /*$this->hasMany('Answers',[
-            'foreignKey'=>'user_id',
-            'joinType'=>'LEFT',
-            'conditions' => array(
-            ' Answers.user_id'=>'id')
-        ]);*/
-      
-
-
-
 
     }
     public function validationDefault(Validator $validator)
@@ -61,10 +48,7 @@ class UsersTable extends Table
            'rule' => ['compareWith', 'password'],
            'message' => 'Passwords are not match.',
            ]);
-      
-         
-            
-        return $validator;
+       return $validator;
     }
     public function indexadmin()
     {
@@ -98,11 +82,7 @@ class UsersTable extends Table
       ]);
         return $id_login;
     }
-    
-
-   
-
-
+ 
 }
 
 ?>

@@ -1,1 +1,0 @@
-<h2>Successfully logout</h2>

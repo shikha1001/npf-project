@@ -1,4 +1,16 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title></title>
+    <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('style.css') ?>
+
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+</head>
 <body>
 <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +32,7 @@
                 <a href="https://www.youtube.com/watch?v=UvTOuJuGClQ" target="_blank">
                 <li class="fa fa-youtube" style="font-size:30px;margin-right: 20px;"></li>
                 </a>
-                <a href="https://twitter.com/?lang=en" target="_blank">
+                <a href="https://twitter.com/nopaperforms1" target="_blank">
                 <li class="fa fa-twitter" style="font-size:30px;margin-right: 20px;"></li>
                 </a>
                 <a href="https://in.linkedin.com/company/nopaperforms-com" target="_blank">

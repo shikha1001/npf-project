@@ -6,7 +6,7 @@ use Cake\ORM\Entity;
 
 class User extends Entity
 {
-    // Make all fields mass assignable except for primary key field "user_id".
+    // Make all fields mass assignable except for primary key field.
     protected $_accessible = [
         '*' => true,
         'id' => false

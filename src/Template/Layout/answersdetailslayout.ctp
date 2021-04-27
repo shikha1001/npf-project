@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title></title>
+<title><?= $this->fetch('title') ?></title>
 	
 </head>
 

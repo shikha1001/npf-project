@@ -33,16 +33,39 @@ class AnswersDetailsTable extends Table
 	public function joinreply($id)
 	{
 		 $querydata=$this->find()->where(['Answers.id_query'=>$id])
+    ->select(['id_query'=>'Answers.id_query','query'=>'Answers.query','name'=>'Users.name','email'=>'Users.email','photo'=>'Answers.photo'])
+    ->join([
+        'Answers' => [
+            'table' => 'answers',
+            'type' => 'RIGHT',
+            'conditions' => 'Answers.id_query = AnswersDetails.id_query'
+        ],
+     'Users' => [
+          'table' => 'users',
+          'type' => 'INNER',
+          'conditions' => 'Answers.user_id  = Users.id'
+      ]
+
+    ]);
+    return $querydata;
+    
+	}
+  public function mailreply()
+  {
+     $querydata=$this->find()->where(['Answers.id_query'=>$id])
     ->select(['id_query'=>'Answers.id_query','query'=>'Answers.query','photo'=>'Answers.photo'])
     ->join([
         'Answers' => [
             'table' => 'answers',
             'type' => 'RIGHT',
             'conditions' => 'Answers.id_query = AnswersDetails.id_query'
-        ]
-
+        ],
+      'Users' => [
+          'table' => 'users',
+          'type' => 'INNER',
+          'conditions' => 'Answers.user_id  = Users.id'
+      ]
     ]);
-    return $querydata;
     
-	}
+  }
 }
